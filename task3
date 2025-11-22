@@ -1,0 +1,45 @@
+text = "Python programming is interesting!" 
+
+first_10_chars = text[:10] 
+
+print(f"Original string: '{text}'") print(f"String length: {len(text)}") print(f"First 10 characters: '{first_10_chars}'") 
+
+if len(text) >= 10: print("String length is sufficient for slicing operation") else: print("String length is insufficient for slicing operation") 
+
+==================================================================================================================================================
+
+word1 = input("Enter the first word: ") word2 = input("Enter the second word: ") 
+
+unique_to_word1 = [char for char in word1 if char not in word2] unique_to_word2 = [char for char in word2 if char not in word1] 
+
+all_unique = unique_to_word1 + unique_to_word2 
+
+print(f"\nFirst word: '{word1}'") print(f"Second word: '{word2}'") print(f"Letters only in '{word1}': {unique_to_word1}") print(f"Letters only in '{word2}': {unique_to_word2}") print(f"All unique letters: {all_unique}") 
+
+
+===========================================================================================================================================================================================================================
+
+sentence = input("Enter a sentence: ") 
+
+words = sentence.split() 
+
+matching_words = [] 
+
+print(f"\nAnalyzing sentence: '{sentence}'") print("\nWord analysis:") 
+
+for word in words: 
+
+clean_word = word.strip('.,!?;:()"\'').lower() 
+ 
+if len(clean_word) > 0: 
+   starts_with = clean_word[0] 
+   ends_with = clean_word[-1] 
+    
+   if starts_with == ends_with: 
+       matching_words.append(word) 
+       print(f"  '{word}' - starts and ends with '{starts_with}' ✓") 
+   else: 
+       print(f"  '{word}' - starts with '{starts_with}', ends with '{ends_with}'") 
+ 
+
+print(f"\nWords that start and end with the same letter: {matching_words}") print(f"Total count: {len(matching_words)}") 
